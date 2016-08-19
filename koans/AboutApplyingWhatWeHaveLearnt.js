@@ -9,7 +9,9 @@ describe("About Applying What We Have Learnt", function() {
        { name: "Pizza Primavera", ingredients: ["roma", "sundried tomatoes", "goats cheese", "rosemary"], containsNuts: false },
        { name: "South Of The Border", ingredients: ["black beans", "jalapenos", "mushrooms"], containsNuts: false },
        { name: "Blue Moon", ingredients: ["blue cheese", "garlic", "walnuts"], containsNuts: true },
-       { name: "Taste Of Athens", ingredients: ["spinach", "kalamata olives", "sesame seeds"], containsNuts: true }
+       { name: "Taste Of Athens", ingredients: ["spinach", "kalamata olives", "sesame seeds"], containsNuts: true },
+       //test
+       //{ name: "Taste Of Athens", ingredients: ["mushrooms"], containsNuts: true }
     ];
   });
 
@@ -34,9 +36,18 @@ describe("About Applying What We Have Learnt", function() {
   });
 
   it("given I'm allergic to nuts and hate mushrooms, it should find a pizza I can eat (functional)", function () {
-      var productsICanEat = [];
+      //var productsICanEat = [];
+      var productsICanEat = products.filter (function (x) {
+        return (!x.containsNuts)
+      }).filter (function (x) {return x.ingredients.indexOf("mushrooms") < 0})
 
-      expect(productsICanEat.length).toBe(FILL_ME_IN);
+      //trying it with filter and any, this passes but need to test if its passi
+      // var productsICanEat = _(products).chain()
+      //   .filter(function(x) {return !x.containsNuts})
+      //   .any(function(x) {return x.ingredients.indexOf("mushrooms") ===-1})
+
+      expect(productsICanEat).toBe([{ name: "Pizza Primavera", ingredients: ["roma", "sundried tomatoes", "goats cheese", "rosemary"], containsNuts: false }]);
+      //expect(productsICanEat.lenght).toBe(1);
   });
 
   /*********************************************************************************/
@@ -50,13 +61,14 @@ describe("About Applying What We Have Learnt", function() {
       }
     }
     
-    expect(sum).toBe(FILL_ME_IN);
+    expect(sum).toBe(233168);
   });
 
   it("should add all the natural numbers below 1000 that are multiples of 3 or 5 (functional)", function () {
-    var sum = FILL_ME_IN;    /* try chaining range() and reduce() */
+    var sum = 300//_.range()    /* try chaining range() and reduce() */
 
-    expect(233168).toBe(FILL_ME_IN);
+
+    expect(sum).toBe(233168);
   });
 
   /*********************************************************************************/
