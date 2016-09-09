@@ -46,8 +46,8 @@ describe("About Applying What We Have Learnt", function() {
       //   .filter(function(x) {return !x.containsNuts})
       //   .any(function(x) {return x.ingredients.indexOf("mushrooms") ===-1})
 
-      expect(productsICanEat).toBe([{ name: "Pizza Primavera", ingredients: ["roma", "sundried tomatoes", "goats cheese", "rosemary"], containsNuts: false }]);
-      //expect(productsICanEat.lenght).toBe(1);
+      //expect(productsICanEat).toBe([{ name: "Pizza Primavera", ingredients: ["roma", "sundried tomatoes", "goats cheese", "rosemary"], containsNuts: false }]);
+      expect(productsICanEat.length).toBe(1);
   });
 
   /*********************************************************************************/
